@@ -1,0 +1,8 @@
+server.port:8088
+spring.datasource.url=jdbc:postgresql://localhost:5432/sqldb
+spring.datasource.username=ved
+spring.datasource.password=ved123
+spring.jpa.hibernate.ddl-auto=update
+
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+server.servlet.context-path=/project5

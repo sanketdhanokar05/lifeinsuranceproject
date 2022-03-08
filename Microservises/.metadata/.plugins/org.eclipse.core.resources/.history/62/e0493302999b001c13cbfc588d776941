@@ -1,0 +1,84 @@
+package com.project.package4.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CustomerPremium_tbl")
+public class Premium {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Customer_Id")
+	private int cid;
+
+	@Column(name = "Premium_Amount")
+	private double pAmount;
+
+	@Column(name = "Date_of_Paid")
+	private LocalDate paidDate;
+
+	@Column(name = "Product_Id")
+	private int pId;
+
+	@Column(name = "Next_Due_Date")
+	private LocalDate dueDate;
+
+	@Column(name = "Status")
+	private String status;
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public double getpAmount() {
+		return pAmount;
+	}
+
+	public void setpAmount(double pAmount) {
+		this.pAmount = pAmount;
+	}
+
+	public LocalDate getPaidDate() {
+		return paidDate;
+	}
+
+	public void setPaidDate(LocalDate paidDate) {
+		this.paidDate = paidDate;
+	}
+
+	public int getpId() {
+		return pId;
+	}
+
+	public void setpId(int pId) {
+		this.pId = pId;
+	}
+
+	public LocalDate getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(LocalDate dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+}

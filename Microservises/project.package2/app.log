@@ -1,0 +1,14 @@
+2022-03-04 16:00:59,466 INFO com.project.package2.Application [restartedMain] Starting Application using Java 17.0.1 on LIN66017132 with PID 15632 (C:\LabAssignments\project.package2\target\classes started by nhanaman in C:\LabAssignments\project.package2)
+2022-03-04 16:00:59,467 INFO com.project.package2.Application [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-03-04 16:00:59,713 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-03-04 16:00:59,713 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-04 16:00:59,726 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/project] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-03-04 16:00:59,750 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-04 16:00:59,754 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2022-03-04 16:00:59,926 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2022-03-04 16:00:59,926 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-04 16:01:00,006 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-04 16:01:00,147 INFO com.project.package2.Application [restartedMain] Started Application in 0.758 seconds (JVM running for 3805.596)
+2022-03-04 16:16:47,425 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/project] [http-nio-8062-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-04 16:17:49,100 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(105)-127.0.0.1] HikariPool-3 - Shutdown initiated...
+2022-03-04 16:17:49,104 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(105)-127.0.0.1] HikariPool-3 - Shutdown completed.

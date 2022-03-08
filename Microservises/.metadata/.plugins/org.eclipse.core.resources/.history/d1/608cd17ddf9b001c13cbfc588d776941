@@ -1,0 +1,7 @@
+
+server.port = 8088
+
+spring.datasource.url = jdbc:postgresql://localhost:5432/sanket
+spring.datasource.username = sanket
+spring.datasource.password = sanket123
+spring.jpa.hibernate.ddl-auto = update

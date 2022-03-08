@@ -1,0 +1,69 @@
+package com.project.package4.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import com.google.common.base.Optional;
+import com.project.package4.entity.Premium;
+import com.project.package4.repository.PremiumRepository;
+
+public class PremiumServiceTest {
+	@InjectMocks
+	private PremiumService premiumService = new PremiumServiceImpl();
+	
+	@Mock
+	private PremiumRepository premiumRepository;
+	
+	@Test
+    public void testSavePremium() {
+       
+		Premium premium = new Premium();
+        premium.setPremiumId(105);
+        premium.setCustomerId(101);
+        premium.setPremiumAmount(105);
+        premium.setPaidDate(LocalDate.of(2022, 03, 07));
+        premium.setProductId(108);
+        premium.setDueDate(LocalDate.of(2022, 03, 07));
+        premium.setStatus("Sucess");
+           
+       
+        when(premiumRepository.save(premium)).thenReturn(premium);
+       
+        Premium newPremium = premiumService.addPremium(premium);
+       
+        //assertEquals(product.getProductName(), newProduct.getProductName(customerProduct));
+       
+        verify(premiumRepository,times(1)).save(premium);       
+       
+    }
+	
+	@Test
+	public void testgetPremiumDetails() {
+		
+			Premium premium = new Premium();
+	        premium.setPremiumId(105);
+	        premium.setCustomerId(101);
+	        premium.setPremiumAmount(105);
+	        premium.setPaidDate(LocalDate.of(2022, 03, 07));
+	        premium.setProductId(108);
+	        premium.setDueDate(LocalDate.of(2022, 03, 07));
+	        premium.setStatus("Sucess");
+		
+		int premiumId=1;
+		Optional<Premium> option=Optional.of(premium);
+		
+		when(premiumRepository.findById(102)).thenReturn(null);
+		
+		Premium existing=premiumService.viewPremium(premiumId);
+		
+		assertEquals(premium.getPremiumId(),existing.getPremiumId());	
+	}
+}

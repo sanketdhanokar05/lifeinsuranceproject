@@ -1,0 +1,39 @@
+package com.project.package4.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CustomerPremium_tbl")
+public class Premium {
+
+	@Id
+	@Column(name = "Premium_Id")
+	private int premiumId;
+	
+	@Column(name = "Customer_Id")
+	private int customerId;
+
+	@Column(name = "Premium_Amount")
+	private double premiumAmount;
+
+	@Column(name = "Date_of_Paid")
+	private LocalDate paidDate;
+
+	@Column(name = "Product_Id")
+	private int productId;
+
+	@Column(name = "Next_Due_Date")
+	private LocalDate dueDate;
+
+	@Column(name = "Status")
+	private String status;
+
+	
+}

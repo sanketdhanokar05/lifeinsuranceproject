@@ -1,0 +1,14 @@
+package com.project.package4.exception;
+
+public class PremiumNotFoundException extends RuntimeException{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public PremiumNotFoundException(String str) {
+		
+		super(str);
+	}
+}

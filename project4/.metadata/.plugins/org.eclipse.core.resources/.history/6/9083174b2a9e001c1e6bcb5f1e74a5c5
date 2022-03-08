@@ -1,0 +1,72 @@
+package com.project.package4.service;
+
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import com.project.package4.entity.Premium;
+import com.project.package4.repository.PremiumRepository;
+
+public class PremiumServiceTest {
+	@InjectMocks
+	private PremiumService premiumService = new PremiumServiceImpl();
+	
+	@Mock
+	private PremiumRepository premiumRepository;
+	
+	@Test
+    public void testSaveProduct() {
+       
+        Premium premium = new Premium();
+        premium.setPremiumId(10);
+        premium.setCustomerId(1);
+        premium.setPremiumAmount(1589.5);
+        premium.setPaidDate(LocalDate.of(2020, 10, 10));
+        premium.setProductId(10);
+        premium.setDueDate(LocalDate.of(2021, 10, 10));
+        premium.setStatus("Sucess");
+           
+       
+        when(premiumRepository.save(premium)).thenReturn(premium);
+       
+        Premium newPremium = premiumService.addPremium(premium);
+       
+        //assertEquals(product.getProductName(), newProduct.getProductName(customerProduct));
+       
+        verify(premiumRepository,times(1)).save(premium);       
+       
+    }
+	
+	@Test
+	public void testgetOrderDetails() {
+		CustomerProduct customerProduct = new CustomerProduct();
+		customerProduct.setCustomerProductId(10);
+        customerProduct.setCustomerId(1);
+        customerProduct.setDateOfMaturity(LocalDate.of(2000, 10, 10));
+        customerProduct.setPremiumType(6);
+        customerProduct.setPremiumMaount(12334);
+        customerProduct.setProductId(23);
+        customerProduct.setNomineeId(324);
+		
+		int customerProductId=1;
+		Optional<CustomerProduct> option=Optional.of(customerProduct);
+		
+		when(customerProductRepository.findById(102)).thenReturn(option);
+		
+		CustomerProduct existing=customerProductService.getCustomerProductDetails(customerProductId);
+		
+		assertEquals(customerProduct.getCustomerProductId(),existing.getCustomerProductId());
+		
+		
+		
+	}
+	
+
+//    }
+}

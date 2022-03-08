@@ -1,0 +1,68 @@
+
+swagger link
+------------
+
+http://localhost:8087/productspring/swagger-ui/
+
+-----------------------------------------------------------------
+New :
+ http://localhost:8088/customerPremiumService/swagger-ui/index.html#/premium-controller/newPremium
+
+
+_______________________________________________________________________________________________________________
+
+Add dependency(swagger dependecy)
+---------------------------------
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
+------------------------------------------------------------------------------------------------------------------------
+New Dependency :
+
+			<dependency>
+   				 <groupId>org.springdoc</groupId>
+   				 <artifactId>springdoc-openapi-ui</artifactId>
+  				 <version>1.6.3</version>
+			</dependency>
+
+_______________________________________________________________________________________________________________
+
+create SpringFoXConfig class
+----------------------------
+
+	@Configuration
+	public class SpringFoxConfig {
+		@Bean
+		public Docket api() {
+			return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo()).select().apis(RequestHandlerSelectors.any())
+					.paths(PathSelectors.any()).build();
+		}
+		private ApiInfo getApiInfo() {
+
+	        return new ApiInfoBuilder()
+	                .title("Ecom App API Doc")
+	                .description("More description about the API")
+	                .version("1.0.0")
+	                .build();
+	    }
+
+________________________________________________________________________________________________________________
+
+application properties
+----------------------
+
+
+server.port=8087
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/(database name)
+spring.datasource.username=(username)
+spring.datasource.password=(password)
+spring.jpa.hibernate.ddl-auto=create/update
+
+server.servlet.context-path=/productspring
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher

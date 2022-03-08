@@ -1,0 +1,23 @@
+pid   product name   ProductPrice    Product duration     PremimiumType     BeneficiaryAmt         productcreatedon
+
+1     JeevanAnanad   100000              10years                                500000                       12-02-2019
+
+
+
+
+PremiumId  PType 
+121        permonth 
+
+
+
+
+
+cId(aadhar/pan)      CName  CAge   CEmail   CMnum   CAddrss  NID
+
+121                  abc     23    asd@12    1234     xxxx    xxxx
+
+
+
+orderID OAmount    OrAmountaccident  PremiumTypeamount         Pduration     Pid     Cid
+
+121      100000       500000             permonth amount          10years      1      121

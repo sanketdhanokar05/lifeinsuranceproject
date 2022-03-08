@@ -1,0 +1,54 @@
+-------------------------------------------------------ProductTable(we declare this values )-----------------------------------------------------------------------------------------------
+
+
+pid   product name   PDes   ProductPrice    Product duration      PremimiumType           MaturityAmount          FixedMaturityAmt                  BeneficiaryAmt         productcreatedon
+
+1     JeevanAnanad          100000              10years            1M/6M/12M            100000+7%Intrest                                             500000                12-02-2019
+
+
+
+-------------------------------------------------------CustomerProductTable(Customer can select by seeing Producttable )-----------------------------------------------------------------------------------------------
+
+  CId     ProductID        DateOfvalid    DateofMaturity PremiumType     PremiumAmount   NomineeId  
+
+  121         1              6M                            halfyearly        200000        123
+
+
+
+-------------------------------------------------------CustomerPremiumTable(Customer will pay premium and see next premium due date )-----------------------------------------------------------------------------------------------
+  CId     premiumamount     Dateodpaid       pid       nextduedate
+ 
+  121       200000           1-july-22        1          31-dec-22  
+          
+
+
+-------------------------------------------------------CustomerTable(customer will enter the details)-----------------------------------------------------------------------------------------------
+
+cId     	CName  		CAge   cGender  CDOB    CEmail    CMnum   CAddrss      GovId(aadhar/pan)  
+
+121     	abc     	23    	M/F	 xxx     asd@12    1234     xxxx           1234                
+
+
+
+
+---------------------------------------------------------NomineeTable(customer will enter the Nomineedetails)---------------------------------------------------------------------------------------------
+
+NomineeId     	NomineeName  		NomineeAge   NomineeGender  NomineeDOB    NomineeEmail    NomineeMnum   NomineeAddrss      GovId(aadhar/pan)
+
+123     	abc     	          23    	M/F	       xxx           asd@12             1234        xxxx   	    1234
+
+
+
+
+------------------------------------------------------------OrderTable(Here data will come based on above tables)------------------------------------------------------------------------------------------
+
+orderID       ProductID          PremiumType        buyeddate                            
+
+1               1234                                                                             
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table order_tbl(order_id int, order_date date, order_amount float,quantity int, 
+product_id int,customer_id int, primary key(order_id),
+ constraint productFK foreign key(product_id) references product_tbl(product_id),
+constraint custFk foreign key(customer_id) references customer_tbl(customer_id));0

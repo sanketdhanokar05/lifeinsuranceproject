@@ -1,0 +1,9 @@
+package com.project.package4.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.project.package4.entity.Premium;
+
+public interface PremiumRepository extends JpaRepository<Premium,Integer> {
+
+}

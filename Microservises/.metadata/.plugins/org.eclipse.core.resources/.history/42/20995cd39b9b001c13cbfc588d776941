@@ -1,0 +1,5 @@
+package com.project.package4.exception;
+
+public class PremiumNotFoundException {
+
+}
